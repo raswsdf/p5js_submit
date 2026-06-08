@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 32px 20px 40px;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  color: #1d2633;
+  background:
+    radial-gradient(circle at top left, rgba(118, 160, 205, 0.35), transparent 34%),
+    linear-gradient(135deg, #eef4fb 0%, #d9e7f5 45%, #f8fbff 100%);
+}
+
+.page-header {
+  max-width: 980px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: #416b9f;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  color: #5b6675;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.project-card {
+  overflow: hidden;
+  border: 1px solid rgba(75, 110, 150, 0.22);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 35px rgba(41, 69, 100, 0.14);
+}
+
+.project-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(75, 110, 150, 0.16);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.project-title span {
+  color: #234f83;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.project-title strong {
+  color: #66758a;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/*
+  각 작품은 원본 600 x 400이므로 카드 영역도 3:2 비율
+*/
+.frame-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #dbe8f5;
+}
+
+.frame-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/*
+  화면이 좁아지면 1열로 전환 (각 작품 비율은 3:2로 유지)
+*/
+@media (max-width: 760px) {
+  body {
+    padding: 24px 14px 32px;
+  }
+
+  #projects {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+.page-footer {
+  margin-top: 24px;
+  text-align: center;
+  color: #a0b8c8;
+  font-size: 0.8rem;
+}
